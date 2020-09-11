@@ -5,6 +5,8 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const breweryId = params.get("id");
 
+
+
 if(breweryId === null){
     document.location.href="index.html";
 }
@@ -19,15 +21,19 @@ async function fetchBrewery() {
 
     brewContainer.innerHTML = "";
     
+    document.title = `${apiResult.name}`;
+
+
+
     brewContainer.innerHTML = `<h3> ${apiResult.name}<h3>
                                 <div class="information">
                                 <p> City: ${apiResult.city}</p>
-                                <p> State:${apiResult.state}</p>
+                                <p> State: ${apiResult.state}</p>
                                 <p> Street: ${apiResult.street}</p>
                                 <a href="${apiResult.website_url}"> ${apiResult.website_url}</a>
                                 </div>
                                 `
-    document.title = ${apiResult.name};
+    
     } catch (error) {
         console.log(error);
         brewContainer.innerHTML = "Wonder what kind of error this is "+ error; 

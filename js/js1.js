@@ -59,7 +59,7 @@ async function getBreweries() {
                                     <h4>${breweries.name}</h4>
                                     <p> City: ${breweries.city}</p> 
                                     <p> Country: ${breweries.country}</p>
-                                    <p> State: ${breweries.state}
+                                    <p> State: ${breweries.state} </p>
                                     </a> `
         })
 
