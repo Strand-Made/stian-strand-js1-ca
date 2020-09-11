@@ -1,64 +1,44 @@
 
-const options = {
-    method: 'GET',
-    headers: {
-        "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-        "x-rapidapi-key": "1ebbe8f1f6msh121e5541a7ac97ap1d303ejsn04a6ee135f2d"
-    }
-};
-
-const cocktailContainer = document.querySelector(".cocktailContainer");
+const brewContainer = document.querySelector(".brewContainer");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const drinkId = params.get("i");
+const breweryId = params.get("id");
 
-if (drinkId === null) {
-    document.location.href = "index.html";
+if(breweryId === null){
+    document.location.href="index.html";
 }
 
-async function fetchCocktail() {
-
+async function fetchBrewery() {
     try {
-        const url = `https://the-cocktail-db.p.rapidapi.com/lookup.php?i=${drinkId}`;
-        const apiResponse = await fetch(url, options);
-        const json = await apiResponse.json();
+    const url = "https://api.openbrewerydb.org/breweries/" + breweryId;
+    const apiResponse = await fetch(url);
 
-        const drinkResult = json.drinks;
-        console.log(drinkResult);
+    const apiResult = await apiResponse.json()
+    console.log(apiResult);
 
-        for (let i = 0; i < drinkResult.length; i++) {
-            //  if(!drinkResult[i].strIngredient1,2,3,4,5,6,7,){
-            //      continue;
-            //  }
-            cocktailContainer.innerHTML = `
-                                            <img src="${drinkResult[i].strDrinkThumb}" alt="${drinkResult[i].strDrink}" />
-                                            <h3>${drinkResult[i].strDrink}</h3>
-                                            <div class="cocktailDescription">
-                                                <h5>Type of drink: ${drinkResult[i].strCategory}</h5>
-                                                <p>${drinkResult[i].strInstructions}</p>
-                                                <ul>
-                                                    <li>${drinkResult[i].strIngredient1}</li>
-                                                    <li>${drinkResult[i].strIngredient2}</li>
-                                                    <li>${drinkResult[i].strIngredient3}</li>
-                                                    <li>${drinkResult[i].strIngredient4}</li>
-                                                    <li>${drinkResult[i].strIngredient5}</li>
-                                                </ul>
-                                                    
-                                            </div>   
-                                                `
-        }
-
+    brewContainer.innerHTML = "";
+    
+    brewContainer.innerHTML = `<h3> ${apiResult.name}<h3>
+                                <div class="information">
+                                <p> City: ${apiResult.city}</p>
+                                <p> State:${apiResult.state}</p>
+                                <p> Street: ${apiResult.street}</p>
+                                <a href="${apiResult.website_url}"> ${apiResult.website_url}</a>
+                                </div>
+                                `
+    document.title = ${apiResult.name};
     } catch (error) {
         console.log(error);
+        brewContainer.innerHTML = "Wonder what kind of error this is "+ error; 
     }
-
-
+    
 
 }
-fetchCocktail();
+
+fetchBrewery();
 
 
-
-
+    
+                                    
 

@@ -1,27 +1,58 @@
 const form = document.querySelector("#contactForm");
 
-form.addEventListener("submit", formControl)
+const name = document.querySelector("#name");
+const nameError = document.querySelector("#nameError")
 
-function formControl(event) {
+const subject = document.querySelector("#subject");
+const subjectError = document.querySelector("#subjectError");
+
+const email = document.querySelector("#email")
+const emailError = document.querySelector("#emailError")
+
+const address = document.querySelector("#address");
+const addressError = document.querySelector("#addressError");
+
+function formControl() {
     event.preventDefault();
 
-    const name = document.querySelector("#name");
-    const nameError = document.querySelector("#nameError")
-    const nameValue = name.value;
+    if(contrLength(name.value, 4) === true) {
+        nameError.style.display = "none";
+    } else {
+        nameError.style.display = "block";
+    }
 
-    const subject = document.querySelector("#subject");
-    const subjectError = document.querySelector("#subjectError");
-    const subjectValue = subject.value;
+    if(contrLength(subject.value,9) === true) {
+        subjectError.style.display = "none";
+    } else {
+        subjectError.style.display = "block";
+    }
+    
+    if(emailValidator(email) === true) {
+        emailError.style.display = "none";
+    }else {
+        emailError.style.display = "block";
+    }
 
-    // const email = document.querySelector("#email")
-    // const emailError = document.querySelector("#subjectError")
-    // const emailValue = email.value;
-
-    const address = document.querySelector("#address");
-    const addressError = document.querySelector("#addressError");
-    const addressValue = address.value;
-
+    if(contrLength(address.value, 24) === true) {
+        addressError.style.display = "none";
+    } else {
+        addressError.style.display = "block";
+    }
     
 
+}
+form.addEventListener("submit", formControl)
 
+function contrLength(value, lnth) {
+    if(value.trim().length > lnth){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function emailValidator(email){
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatch = regEx.test(email);
+    return patternMatch;
 }

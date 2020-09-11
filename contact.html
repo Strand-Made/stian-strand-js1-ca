@@ -7,22 +7,26 @@
     <link href='css/style.css' rel='stylesheet' /><link rel='icon' href='data:;base64,=' />
 </head>
 <body> 
+    <nav>
+        <ul>
+            <li><a href='index.html'>Return to home</a></li>
+        </ul>
   <form id="contactForm">
         <div>
             <input type="text" id="name" placeholder="Name (minimum 5 characters)" />
-            <div id="NameError" class="error">Your name must be at least 5 characters</div>
+            <div id="nameError" class="formError">Your name must be at least 5 characters</div>
         </div>
         <div>
             <input type="text" id="subject" placeholder ="Enter your subject here (minimum 10 characters)"/>
-            <div id="subjectError" class="error">Subject must be at least 10 characters</div>
+            <div id="subjectError" class="formError">Subject must be at least 10 characters</div>
         </div>
         <div>
             <input type="text" id="email" placeholder= "Enter your email address here" />
-            <div id="emailError" class="error">Has to be an email adress</div>
+            <div id="emailError" class="formError">Email Address required</div>
         </div> 
         <div>
             <input type="text" id="address" placeholder= "Enter your address here (minimum 25 characters"/>
-            <div id="addressError" class="error">Address must be atleast 25 characters</div>
+            <div id="addressError" class="formError">Address must be atleast 25 characters</div>
 
         </div> 
         <div>
