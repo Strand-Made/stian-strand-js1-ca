@@ -1,6 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Raleway&display=swap');
-@import "/components/loader.css";
+@import '/stian-strand-js1-ca/css/components/loader.css';
 
 h1, h2, h3, h4, nav {
     font-family: 'Kumbh Sans', sans-serif;
@@ -13,9 +13,16 @@ p {
     box-sizing: border-box;
 }
 
-html{
+html, body{
     height: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 a {
     text-decoration: none;
@@ -39,6 +46,10 @@ ul {
     font-weight: bold;
 }
 
+footer {
+    flex-shrink: 0;
+}
+
 
 /* Contact form */
 .formError {
@@ -46,24 +57,43 @@ ul {
     color: red;
 }
 
+#contactForm {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 #contactForm input {
     margin-top: 1em;
     padding: 1em;
     border-radius: 2px;
     border-color: #808080;
-    width: 100%;
+    width: 500px;
+    
     
     
 }
 
-.button {
+button {
     margin-top: 10px;
+    border-radius: 2px;
+    padding: 5px 10px;
+    border-color: none;
+    color: white;
+    background-color: #808080;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+button:hover {
+    opacity: .8;
+    cursor: pointer;
 }
 
 
 /* Index page */
 .drinkContainer {
     display: flex;
+    flex: 1 0 auto;
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -90,6 +120,7 @@ ul {
 .brewContainer {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
     align-items: center;
     justify-items: center;
     background-color: #808080;

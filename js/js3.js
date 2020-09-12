@@ -12,7 +12,8 @@ const emailError = document.querySelector("#emailError")
 const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
 
-function formControl() {
+function formControl(event) {
+    
     event.preventDefault();
 
     if(contrLength(name.value, 4) === true) {

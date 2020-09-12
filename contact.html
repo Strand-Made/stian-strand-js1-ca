@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form for Javascript1 CA </title>
-    <link href='css/style.css' rel='stylesheet' /><link rel='icon' href='data:;base64,=' />
+    <link href='css/style.css' rel='stylesheet' />
+    <link rel='icon' href='data:;base64,=' />
 </head>
+
 <body>
     <nav>
         <ul>
-            <li><a href='index.html'>-> Return to home <- </a></li>
+            <li><a href='index.html'> Return to home </a></li>
+            <li><a class="active" href="#">Contact form</a></li>
         </ul>
     </nav>
-  <form id="contactForm">
+    <div class="flexContent"></div>
+    <form id="contactForm">
+        <h2>Contact form</h2>
         <div>
             <input type="text" id="name" placeholder="Name (minimum 5 characters)" />
             <div id="nameError" class="formError">Your name must be at least 5 characters</div>
         </div>
         <div>
-            <input type="text" id="subject" placeholder ="Enter your subject here (minimum 10 characters)"/>
+            <input type="text" id="subject" placeholder="Enter your subject here (minimum 10 characters)" />
             <div id="subjectError" class="formError">Subject must be at least 10 characters</div>
         </div>
         <div>
-            <input type="text" id="email" placeholder= "Enter your email address here" />
+            <input type="text" id="email" placeholder="Enter your email address here" />
             <div id="emailError" class="formError">Email Address required</div>
-        </div> 
+        </div>
         <div>
-            <input type="text" id="address" placeholder= "Enter your address here (minimum 25 characters"/>
+            <input type="text" id="address" placeholder="Enter your address here (minimum 25 characters)" />
             <div id="addressError" class="formError">Address must be atleast 25 characters</div>
 
-        </div> 
+        </div>
         <div>
             <button type="submit">Submit</button>
         </div>
+        </div>
     </form>
+    </div>
 
 
 
     <script src="js/js3.js"></script>
+    <footer>
+        <p>Api by openBreweryDB</p>
+    </footer>
 </body>
+
 </html>
