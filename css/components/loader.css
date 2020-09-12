@@ -8,7 +8,7 @@
 
 .loader > span {
     display: inline-block;
-    background-color: red;
+    background-color: #2F4F4F;
     width: 0px;
     height: 0px;
     border-radius: 10%;
@@ -18,7 +18,7 @@
 }
 
 .loader >span:nth-child(2){
-    background-color: green;
+    background-color: #696969;
     animation-delay: 0.2s;
 }
     

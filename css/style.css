@@ -1,13 +1,6 @@
-/* Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Raleway&display=swap');
 @import '/stian-strand-js1-ca/css/components/loader.css';
-
-h1, h2, h3, h4, nav {
-    font-family: 'Kumbh Sans', sans-serif;
-}
-p {
-    font-family: 'Raleway', sans-serif;
-}
 
 * {
     box-sizing: border-box;
@@ -23,11 +16,18 @@ body {
 }
 
 
+h1, h2, h3, h4, nav {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
 
 a {
     text-decoration: none;
 }
-
+/*----- Navigation ----- */
 nav ul li{
     display: inline-block;
     padding-left: 1em;
@@ -46,10 +46,46 @@ ul {
     font-weight: bold;
 }
 
+/* Sticky footer */
 footer {
     flex-shrink: 0;
 }
 
+/* Index page */
+.drinkContainer {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.drinkContainer a {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: black;    
+    background-color: #808080;
+    margin: 10px;
+    width: 250px;
+    max-width: 250px;
+    border-radius: .4em;
+}
+
+.drinkContainer a:hover {
+    opacity: .8;
+}
+
+/* Details page */
+
+.brewContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    align-items: center;
+    background-color: #808080;
+    
+}
 
 /* Contact form */
 .formError {
@@ -87,42 +123,4 @@ button {
 button:hover {
     opacity: .8;
     cursor: pointer;
-}
-
-
-/* Index page */
-.drinkContainer {
-    display: flex;
-    flex: 1 0 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-}
-
-.drinkContainer a {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: black;    
-    background-color: #808080;
-    margin: 10px;
-    width: 250px;
-    max-width: 250px;
-    border-radius: .4em;
-}
-
-.drinkContainer a:hover {
-    opacity: .8;
-}
-
-/* Details page */
-
-.brewContainer {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-    align-items: center;
-    justify-items: center;
-    background-color: #808080;
-    
 }
