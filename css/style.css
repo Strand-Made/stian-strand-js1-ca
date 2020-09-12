@@ -1,5 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Raleway&display=swap');
+@import "/components/loader.css";
 
 h1, h2, h3, h4, nav {
     font-family: 'Kumbh Sans', sans-serif;
@@ -20,12 +21,22 @@ a {
     text-decoration: none;
 }
 
+nav ul li{
+    display: inline-block;
+    padding-left: 1em;
+}
+
 nav ul li a:hover {
     opacity: .7;
 }
 
 ul {
     list-style: none;
+    
+}
+
+.active {
+    font-weight: bold;
 }
 
 
@@ -45,6 +56,10 @@ ul {
     
 }
 
+.button {
+    margin-top: 10px;
+}
+
 
 /* Index page */
 .drinkContainer {
@@ -58,7 +73,7 @@ ul {
     display: flex;
     flex-direction: column;
     text-align: center;
-    color: #fff;    
+    color: black;    
     background-color: #808080;
     margin: 10px;
     width: 250px;
@@ -68,4 +83,15 @@ ul {
 
 .drinkContainer a:hover {
     opacity: .8;
+}
+
+/* Details page */
+
+.brewContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: #808080;
+    
 }
